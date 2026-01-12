@@ -1,7 +1,7 @@
 // Garden Gnome Software - Skin
 // Pano2VR 6.1.14/18105
 // Filename: switch before and after.ggsk
-// Generated 2026-01-12T08:50:07
+// Generated 2026-01-12T09:14:51
 
 function pano2vrSkin(player,base) {
 	var me=this;
