@@ -1,7 +1,7 @@
 // Garden Gnome Software - Skin
 // Pano2VR 6.1.14/18105
 // Filename: switch before and after.ggsk
-// Generated 2026-01-14T08:50:03
+// Generated 2026-01-17T10:43:08
 
 function pano2vrSkin(player,base) {
 	var me=this;
@@ -250,7 +250,7 @@ function pano2vrSkin(player,base) {
 		me._text_1.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((me.ggUserdata.tags.indexOf("interiors") != -1))
+				((player.hasVR() == true))
 			)
 			{
 				newLogicStateVisible = 0;
@@ -316,6 +316,7 @@ function pano2vrSkin(player,base) {
 	document.head.appendChild(style);
 	me._text_10.logicBlock_visible();
 	me._text_1.logicBlock_visible();
-	player.addListener('changenode', function(args) { me._text_10.logicBlock_visible();me._text_1.logicBlock_visible(); });
+	player.addListener('changenode', function(args) { me._text_10.logicBlock_visible(); });
+	player.addListener('vrchanged', function(args) { me._text_1.logicBlock_visible(); });
 	me.skinTimerEvent();
 };
